@@ -1,7 +1,7 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router"
 import { useEffect, useState } from "react"
 
-import { fetchWorklogs, fetchFreelancers } from "@/data/mockData"
+import { fetchFreelancers, fetchWorklogs } from "@/data/mockData"
 import useAuth from "@/hooks/useAuth"
 
 export const Route = createFileRoute("/_layout/")({
@@ -39,9 +39,7 @@ function Dashboard() {
           (sum: number, wl: any) => sum + wl.total_amount,
           0,
         )
-        const paidWorklogs = worklogs.filter(
-          (wl: any) => wl.status === "paid",
-        )
+        const paidWorklogs = worklogs.filter((wl: any) => wl.status === "paid")
 
         setStats({
           totalWorklogs: worklogs.length,
@@ -125,9 +123,7 @@ function Dashboard() {
           <p className="mt-2 text-3xl font-bold tabular-nums text-emerald-400">
             {stats.paidCount}
           </p>
-          <p className="mt-1 text-xs text-muted-foreground">
-            settled worklogs
-          </p>
+          <p className="mt-1 text-xs text-muted-foreground">settled worklogs</p>
         </div>
         <div className="rounded-lg border border-border bg-card p-5">
           <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
@@ -136,9 +132,7 @@ function Dashboard() {
           <p className="mt-2 text-3xl font-bold tabular-nums text-foreground">
             ${stats.totalAmount.toFixed(2)}
           </p>
-          <p className="mt-1 text-xs text-muted-foreground">
-            all time
-          </p>
+          <p className="mt-1 text-xs text-muted-foreground">all time</p>
         </div>
       </div>
 

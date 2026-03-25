@@ -57,10 +57,7 @@ function WorklogDetailPage() {
   }, [worklogId])
 
   const totalPages = Math.max(1, Math.ceil(timeEntries.length / pageSize))
-  const displayed = timeEntries.slice(
-    (page - 1) * pageSize,
-    page * pageSize,
-  )
+  const displayed = timeEntries.slice((page - 1) * pageSize, page * pageSize)
 
   const getStatusBadgeClasses = (status: string) => {
     switch (status) {
@@ -159,7 +156,8 @@ function WorklogDetailPage() {
               {worklog.total_hours.toFixed(1)}h
             </p>
             <p className="text-xs text-muted-foreground">
-              {billableHours.toFixed(1)}h billable · {nonBillableHours.toFixed(1)}h non-billable
+              {billableHours.toFixed(1)}h billable ·{" "}
+              {nonBillableHours.toFixed(1)}h non-billable
             </p>
           </div>
           <div className="rounded-md bg-muted/50 p-3">

@@ -1,10 +1,7 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router"
 import { useEffect, useState } from "react"
 
-import {
-  fetchFreelancerById,
-  fetchWorklogById,
-} from "@/data/mockData"
+import { fetchFreelancerById, fetchWorklogById } from "@/data/mockData"
 
 export const Route = createFileRoute("/_layout/payments")({
   component: PaymentsPage,
@@ -40,7 +37,9 @@ function PaymentsPage() {
       try {
         const storedIds = sessionStorage.getItem("paymentWorklogIds")
         if (!storedIds) {
-          setError("No worklogs selected for payment. Please go back and select worklogs.")
+          setError(
+            "No worklogs selected for payment. Please go back and select worklogs.",
+          )
           setIsLoading(false)
           return
         }
@@ -170,8 +169,8 @@ function PaymentsPage() {
           </h2>
           <p className="mt-2 text-sm text-muted-foreground">
             ${totalAmount.toFixed(2)} has been processed for{" "}
-            {includedWorklogs.length} worklogs across{" "}
-            {uniqueFreelancers.size} freelancers.
+            {includedWorklogs.length} worklogs across {uniqueFreelancers.size}{" "}
+            freelancers.
           </p>
           <button
             type="button"
@@ -254,8 +253,7 @@ function PaymentsPage() {
         {Object.entries(groupedByFreelancer).map(
           ([freelancerId, freelancerWorklogs]) => {
             const freelancer = freelancerWorklogs[0]?.freelancer
-            const isFreelancerExcluded =
-              excludedFreelancerIds.has(freelancerId)
+            const isFreelancerExcluded = excludedFreelancerIds.has(freelancerId)
 
             const freelancerTotal = freelancerWorklogs
               .filter(
@@ -303,9 +301,7 @@ function PaymentsPage() {
                           ? "border-amber-500/30 bg-amber-500/15 text-amber-400 hover:bg-amber-500/25"
                           : "border-destructive/30 bg-destructive/10 text-destructive hover:bg-destructive/20"
                       }`}
-                      onClick={() =>
-                        toggleFreelancerExclusion(freelancerId)
-                      }
+                      onClick={() => toggleFreelancerExclusion(freelancerId)}
                       aria-label={
                         isFreelancerExcluded
                           ? `Re-include ${freelancer?.name}`
@@ -328,7 +324,9 @@ function PaymentsPage() {
                       <div
                         key={wl.id}
                         className={`flex items-center justify-between p-4 transition-opacity ${
-                          isExcluded && !isFreelancerExcluded ? "opacity-50" : ""
+                          isExcluded && !isFreelancerExcluded
+                            ? "opacity-50"
+                            : ""
                         }`}
                       >
                         <div className="flex items-center gap-3">

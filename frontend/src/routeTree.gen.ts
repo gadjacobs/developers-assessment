@@ -83,7 +83,6 @@ const LayoutWorklogWorklogIdRoute = LayoutWorklogWorklogIdRouteImport.update({
 } as any)
 
 export interface FileRoutesByFullPath {
-  '/': typeof LayoutIndexRoute
   '/login': typeof LoginRoute
   '/recover-password': typeof RecoverPasswordRoute
   '/reset-password': typeof ResetPasswordRoute
@@ -93,6 +92,7 @@ export interface FileRoutesByFullPath {
   '/payments': typeof LayoutPaymentsRoute
   '/settings': typeof LayoutSettingsRoute
   '/worklogs': typeof LayoutWorklogsRoute
+  '/': typeof LayoutIndexRoute
   '/worklog/$worklogId': typeof LayoutWorklogWorklogIdRoute
 }
 export interface FileRoutesByTo {
@@ -126,7 +126,6 @@ export interface FileRoutesById {
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    | '/'
     | '/login'
     | '/recover-password'
     | '/reset-password'
@@ -136,6 +135,7 @@ export interface FileRouteTypes {
     | '/payments'
     | '/settings'
     | '/worklogs'
+    | '/'
     | '/worklog/$worklogId'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -207,7 +207,7 @@ declare module '@tanstack/react-router' {
     '/_layout': {
       id: '/_layout'
       path: ''
-      fullPath: '/'
+      fullPath: ''
       preLoaderRoute: typeof LayoutRouteImport
       parentRoute: typeof rootRouteImport
     }

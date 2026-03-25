@@ -97,9 +97,7 @@ function WorklogsPage() {
     if (selectedWorklogIds.size === filteredWorklogs.length) {
       setSelectedWorklogIds(new Set())
     } else {
-      setSelectedWorklogIds(
-        new Set(filteredWorklogs.map((wl: any) => wl.id)),
-      )
+      setSelectedWorklogIds(new Set(filteredWorklogs.map((wl: any) => wl.id)))
     }
   }
 
@@ -274,7 +272,10 @@ function WorklogsPage() {
 
         {activeFilter === "dateRange" && (
           <div className="mt-3 flex items-center gap-3">
-            <label className="text-sm text-muted-foreground" htmlFor="date-from">
+            <label
+              className="text-sm text-muted-foreground"
+              htmlFor="date-from"
+            >
               From
             </label>
             <input

@@ -632,7 +632,8 @@ const worklogs = [
   {
     id: "wl-001",
     task_name: "API Gateway Implementation",
-    description: "Build and configure the main API gateway with rate limiting and authentication",
+    description:
+      "Build and configure the main API gateway with rate limiting and authentication",
     freelancer_id: "fl-001",
     status: "paid",
     created_at: "2024-11-04T08:00:00.000Z",
@@ -652,7 +653,8 @@ const worklogs = [
   {
     id: "wl-003",
     task_name: "Frontend Dashboard Redesign",
-    description: "Complete redesign of the admin dashboard with new charts and responsive layout",
+    description:
+      "Complete redesign of the admin dashboard with new charts and responsive layout",
     freelancer_id: "fl-003",
     status: "approved",
     created_at: "2024-11-11T08:45:00.000Z",
@@ -662,7 +664,8 @@ const worklogs = [
   {
     id: "wl-004",
     task_name: "Payment Integration - Stripe",
-    description: "Integrate Stripe payment processing with webhook handlers and retry logic",
+    description:
+      "Integrate Stripe payment processing with webhook handlers and retry logic",
     freelancer_id: "fl-004",
     status: "approved",
     created_at: "2024-11-18T08:30:00.000Z",
@@ -682,7 +685,8 @@ const worklogs = [
   {
     id: "wl-006",
     task_name: "CI/CD Pipeline Setup",
-    description: "Configure GitHub Actions, Docker builds, and staging deployment",
+    description:
+      "Configure GitHub Actions, Docker builds, and staging deployment",
     freelancer_id: "fl-006",
     status: "approved",
     created_at: "2024-11-11T07:45:00.000Z",
@@ -712,7 +716,8 @@ const worklogs = [
   {
     id: "wl-009",
     task_name: "Reporting Module",
-    description: "Build report generation engine with CSV/PDF export capabilities",
+    description:
+      "Build report generation engine with CSV/PDF export capabilities",
     freelancer_id: "fl-002",
     status: "submitted",
     created_at: "2024-11-25T07:30:00.000Z",
@@ -722,7 +727,8 @@ const worklogs = [
   {
     id: "wl-010",
     task_name: "Mobile API Layer",
-    description: "Design and implement REST/GraphQL API endpoints for mobile app",
+    description:
+      "Design and implement REST/GraphQL API endpoints for mobile app",
     freelancer_id: "fl-003",
     status: "approved",
     created_at: "2024-11-25T08:30:00.000Z",
@@ -732,7 +738,8 @@ const worklogs = [
   {
     id: "wl-011",
     task_name: "Infrastructure Monitoring",
-    description: "Set up Prometheus, Grafana dashboards, and PagerDuty alerting",
+    description:
+      "Set up Prometheus, Grafana dashboards, and PagerDuty alerting",
     freelancer_id: "fl-004",
     status: "submitted",
     created_at: "2024-11-25T07:45:00.000Z",
@@ -742,7 +749,8 @@ const worklogs = [
   {
     id: "wl-012",
     task_name: "Data Pipeline Architecture",
-    description: "Build Kafka-based event pipeline with Flink stream processing",
+    description:
+      "Build Kafka-based event pipeline with Flink stream processing",
     freelancer_id: "fl-005",
     status: "approved",
     created_at: "2024-12-02T08:30:00.000Z",
@@ -792,7 +800,8 @@ const worklogs = [
   {
     id: "wl-017",
     task_name: "Audit Logging System",
-    description: "Build comprehensive audit trail with search and compliance reports",
+    description:
+      "Build comprehensive audit trail with search and compliance reports",
     freelancer_id: "fl-005",
     status: "submitted",
     created_at: "2024-12-09T08:00:00.000Z",
@@ -802,7 +811,8 @@ const worklogs = [
   {
     id: "wl-018",
     task_name: "File Storage Service",
-    description: "S3-compatible storage with multipart upload and file scanning",
+    description:
+      "S3-compatible storage with multipart upload and file scanning",
     freelancer_id: "fl-004",
     status: "submitted",
     created_at: "2024-12-16T08:30:00.000Z",
