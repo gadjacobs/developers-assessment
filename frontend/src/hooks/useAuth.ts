@@ -1,10 +1,9 @@
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query"
+import { useMutation, useQueryClient } from "@tanstack/react-query"
 import { useNavigate } from "@tanstack/react-router"
 
 import {
   type Body_login_login_access_token as AccessToken,
   LoginService,
-  type UserPublic,
   type UserRegister,
   UsersService,
 } from "@/client"
@@ -12,7 +11,17 @@ import { handleError } from "@/utils"
 import useCustomToast from "./useCustomToast"
 
 const isLoggedIn = () => {
-  return localStorage.getItem("access_token") !== null
+  // In frontend-only mode, always return true so the dashboard is accessible
+  return true
+}
+
+// Mock user for frontend-only mode (no real backend)
+const mockUser = {
+  id: "mock-admin-001",
+  email: "admin@worklog.com",
+  full_name: "Admin User",
+  is_superuser: true,
+  is_active: true,
 }
 
 const useAuth = () => {
@@ -20,11 +29,8 @@ const useAuth = () => {
   const queryClient = useQueryClient()
   const { showErrorToast } = useCustomToast()
 
-  const { data: user } = useQuery<UserPublic | null, Error>({
-    queryKey: ["currentUser"],
-    queryFn: UsersService.readUserMe,
-    enabled: isLoggedIn(),
-  })
+  // Use mock user directly — no backend API call needed
+  const user = mockUser as any
 
   const signUpMutation = useMutation({
     mutationFn: (data: UserRegister) =>
